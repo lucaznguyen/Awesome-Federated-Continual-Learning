@@ -1,0 +1,322 @@
+# Awesome Federated Continual Learning (FCL)
+
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![License](https://img.shields.io/badge/license-MIT-black.svg)
+![Stars](https://img.shields.io/github/stars/lucaznguyen/Awesome-Federated-Continual-Learning?style=social)
+
+A curated list of **Federated Continual Learning (FCL)** papers, surveys, benchmarks, code, and related resources.
+
+**Scope:** this repository tracks a broad FCL candidate corpus, including peer-reviewed papers, surveys, benchmarks, workshops, and recent preprints. Papers are grouped by year, with dedicated survey and benchmark sections.
+
+**PDF policy:** PDFs are not committed to this repository. Use official paper, DOI, arXiv, OpenReview, CVF, publisher, or author-provided links.
+
+**Format rule:**  
+`- Title (**Venue Year**) [[paper](link)] [[pdf](link)] [[code](link)] <sub>compact tags</sub>`
+
+If a PDF or code link is unavailable, omit that tag.
+
+---
+
+## What is Federated Continual Learning?
+
+**Federated Learning (FL)** enables multiple clients, such as hospitals, mobile devices, vehicles, factories, or institutions, to collaboratively train models without sharing raw data.
+
+**Continual Learning (CL)** studies how models learn from non-stationary data streams while retaining previously acquired knowledge.
+
+**Federated Continual Learning (FCL)** combines these two settings. It studies how decentralized clients learn from evolving task, class, or domain streams while preserving privacy, communication efficiency, personalization, and long-term memory.
+
+FCL is especially important when each client sees different temporal streams, different class arrivals, different domains, different resource budgets, or different participation schedules.
+
+### FCL vs. Related Settings
+
+- **Standard FL:** usually assumes a relatively static local distribution and does not explicitly evaluate forgetting over time.
+- **Centralized CL:** assumes data are locally available or centrally pooled, which violates FL privacy constraints.
+- **Federated Class-Incremental Learning (FCIL):** a major FCL subsetting where clients learn new classes over time.
+- **Personalized FCL:** maintains client-specific knowledge instead of forcing a single global model to serve all clients.
+- **Online/Streaming FCL:** removes clean task boundaries or task identity assumptions.
+
+---
+
+## Inclusion Policy
+
+This repository currently includes all papers from the local 175-paper FCL candidate corpus. A paper can be included if it is relevant to broad FCL, including:
+
+- Federated Continual Learning / Continual Federated Learning.
+- Federated Class-Incremental or Class-Continual Learning.
+- Federated Domain/Task/Segmentation Continual Learning.
+- Personalized, online, streaming, asynchronous, graph, medical, industrial, edge, or resource-constrained FCL.
+- Surveys, benchmarks, toolkits, and reproducibility resources for FCL.
+
+Open a pull request if a paper is missing, duplicated, misclassified, or has an official code link.
+
+---
+
+## Metadata
+
+Each item may end with tiny compact tags so the README stays easy to scan. BibTeX entries are kept in `papers.bib`.
+
+---
+
+## Related Awesome Repositories
+
+- Awesome Federated Domain Generalization [[github](https://github.com/lucaznguyen/Awesome-Federated-Domain-Generalization)]
+- Awesome Federated Machine Learning [[github](https://github.com/innovation-cat/Awesome-Federated-Machine-Learning)]
+- Awesome Continual Learning [[github](https://github.com/ContinualAI/continual-learning-papers)]
+
+---
+
+## Surveys
+
+- Federated continual learning: A comprehensive survey on lifelong and privacy-preserving learning over distributed and non-stationary data (**Neurocomputing, Volume 694, 2026, 133929 2026**) [[paper](https://doi.org/10.48550/arXiv.2606.11272)] [[pdf](https://arxiv.org/pdf/2606.11272)] <sub>survey &middot; domain/seg &middot; replay</sub>
+- Federated continual learning meets digital twins: A survey on methods, intersections and perspectives (**Neurocomputing 2026**) [[paper](https://doi.org/10.1016/j.neucom.2026.133366)] <sub>survey &middot; domain/seg &middot; aggregation</sub>
+- Federated Continual Learning: Concepts, Challenges, and Solutions (**arXiv 2025**) [[paper](https://doi.org/10.48550/arxiv.2502.07059)] [[pdf](https://arxiv.org/pdf/2502.07059)] <sub>survey &middot; personalized &middot; resource</sub>
+- Federated continual learning for task-incremental and class-incremental problems: A survey (**ESWA 2025**) [[paper](https://doi.org/10.1016/j.eswa.2025.129278)] <sub>survey &middot; FCIL</sub>
+- Federated Class-Incremental Learning: A Survey (**Preprint 2025**) [[paper](https://doi.org/10.1109/icmlt65785.2025.11193246)] <sub>survey &middot; FCIL &middot; replay</sub>
+- A Contemporary Survey of Federated Continual Learning (**Zenodo preprint 2025**) [[paper](https://doi.org/10.5281/zenodo.14768027)] [[pdf](https://zenodo.org/records/14768027/files/A_Contemporary_Survey_of_Federated_Continual_Learning_v0.2.pdf?download=1)] <sub>survey &middot; preprint</sub>
+- Federated Continual Learning via Knowledge Fusion: A Survey (**arXiv 2024**) [[paper](https://doi.org/10.48550/arxiv.2312.16475)] [[pdf](https://arxiv.org/pdf/2312.16475)] <sub>survey &middot; online &middot; distill</sub>
+- Federated Continual Learning for Edge-AI: A Comprehensive Survey (**arXiv 2024**) [[paper](https://doi.org/10.48550/arxiv.2411.13740)] [[pdf](https://arxiv.org/pdf/2411.13740)] <sub>survey &middot; FCIL &middot; resource</sub>
+
+---
+
+## Benchmarks and Frameworks
+
+- MLFCIL: A Multi-Level Forgetting Mitigation Framework for Federated Class-Incremental Learning in LEO Satellites (**IEEE IoT-J 2026**) [[paper](https://doi.org/10.48550/arXiv.2604.02356)] [[pdf](https://arxiv.org/pdf/2604.02356)] <sub>FCIL &middot; replay &middot; distill</sub>
+- Accurate and Resource-Efficient Federated Continual Learning (**Technical Report 2026**) [[paper](https://doi.org/10.48550/arXiv.2606.11480)] [[pdf](https://arxiv.org/pdf/2606.11480)] [[code](https://github.com/JebacyrilArockiaraj/Fed-RAN-SSL)] <sub>replay &middot; prototype &middot; resource</sub>
+- A federated class-incremental learning framework with dynamic client participation and evolution for machine fault diagnosis (**Advanced Engineering Informatics 2026**) [[paper](https://doi.org/10.1016/j.aei.2026.104700)] <sub>FCIL</sub>
+- SacFL: Self-Adaptive Federated Continual Learning for Resource-Constrained End Devices (**IEEE TNNLS 2025**) [[paper](https://doi.org/10.1109/tnnls.2025.3565827)] [[pdf](https://arxiv.org/pdf/2505.00365)] <sub>benchmark &middot; FCIL &middot; resource</sub>
+- Resource-Constrained Federated Continual Learning: What Does Matter? (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2501.08737)] [[pdf](https://arxiv.org/pdf/2501.08737)] <sub>benchmark &middot; domain/seg &middot; resource</sub>
+- Large-Small Model Collaborative Framework for Federated Continual Learning (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2508.09489)] [[pdf](https://arxiv.org/pdf/2508.09489)] <sub>personalized &middot; distill &middot; architecture</sub>
+- Evaluation Framework for Centralized and Decentralized Aggregation Algorithm in Federated Systems (**Cureus J Comput Sci 3: es44389-026-00028-0 (2026) 2025**) [[paper](https://doi.org/10.48550/arXiv.2512.10987)] [[pdf](https://arxiv.org/pdf/2512.10987)] <sub>aggregation &middot; resource</sub>
+- Parameterizing Federated Continual Learning for Reproducible Research (**Communications in computer and information science 2024**) [[paper](https://doi.org/10.1007/978-3-031-74643-7_35)] [[pdf](https://arxiv.org/pdf/2406.02015)] <sub>resource</sub>
+- FPPL: An Efficient and Non-IID Robust Federated Continual Learning Framework (**arXiv 2024**) [[paper](https://doi.org/10.1109/bigdata62323.2024.10825220)] [[pdf](https://arxiv.org/pdf/2411.01904)] [[code](https://github.com/ycheoo/FPPL)] <sub>edge &middot; replay &middot; prompt</sub>
+- FedCL-Ensemble Learning: A Framework of Federated Continual Learning with Ensemble Transfer Learning Enhanced for Alzheimer's MRI Classifications while Preserving Privacy (**6 pages, 4 figures 2024**) [[paper](https://doi.org/10.48550/arXiv.2411.12756)] [[pdf](https://arxiv.org/pdf/2411.12756)] <sub>aggregation &middot; privacy</sub>
+- Facing spatiotemporal heterogeneity: A unified federated continual learning framework with self-challenge rehearsal for industrial monitoring tasks (**Knowledge-Based Systems 2024**) [[paper](https://doi.org/10.1016/j.knosys.2024.111491)] <sub>replay &middot; resource</sub>
+- Efficient knowledge management for heterogeneous federated continual learning on resource-constrained edge devices (**FGCS 2024**) [[paper](https://doi.org/10.1016/j.future.2024.02.018)] <sub>benchmark &middot; edge &middot; resource</sub>
+- A Federated Continual Learning Framework for Sustainable Network Anomaly Detection in O-RAN (**Preprint 2024**) [[paper](https://doi.org/10.1109/wcnc57260.2024.10570951)] [[pdf](https://oulurepo.oulu.fi/bitstream/10024/51580/1/nbnfioulu-202408225551.pdf)] <sub>edge &middot; replay &middot; resource</sub>
+- Flexibility and Privacy: A Multi-Head Federated Continual Learning Framework for Dynamic Edge Environments (**CANDAR 2023**) [[paper](https://doi.org/10.1109/candar60563.2023.00009)] <sub>edge &middot; privacy &middot; resource</sub>
+- FedINC: An Exemplar-Free Continual Federated Learning Framework with Small Labeled Data (**Preprint 2023**) [[paper](https://doi.org/10.1145/3625687.3625800)] <sub>edge &middot; prototype &middot; regularize</sub>
+- FedET: A Communication-Efficient Federated Class-Incremental Learning Framework Based on Enhanced Transformer (**IJCAI 2023**) [[paper](https://doi.org/10.24963/ijcai.2023/443)] [[pdf](https://www.ijcai.org/proceedings/2023/0443.pdf)] <sub>FCIL &middot; distill &middot; aggregation</sub>
+- GFCL: A GRU-based Federated Continual Learning Framework against Data Poisoning Attacks in IoV (**arXiv 2022**) [[paper](https://doi.org/10.48550/arxiv.2204.11010)] [[pdf](https://arxiv.org/pdf/2204.11010)] <sub>edge &middot; resource &middot; preprint</sub>
+- Cross-FCL: Toward a Cross-Edge Federated Continual Learning Framework in Mobile Edge Computing Systems (**IEEE TMC 2022**) [[paper](https://doi.org/10.1109/tmc.2022.3223944)] <sub>edge &middot; replay &middot; aggregation</sub>
+
+---
+
+# Papers by Year
+
+## 2026
+
+- When Generator Replay Degrades: Projected Rehearsal Orchestration for Heterogeneous Federated Class-Incremental Learning (**46 pages 2026**) [[paper](https://doi.org/10.48550/arXiv.2606.15695)] [[pdf](https://arxiv.org/pdf/2606.15695)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- MLFCIL: A Multi-Level Forgetting Mitigation Framework for Federated Class-Incremental Learning in LEO Satellites (**IEEE IoT-J 2026**) [[paper](https://doi.org/10.48550/arXiv.2604.02356)] [[pdf](https://arxiv.org/pdf/2604.02356)] <sub>FCIL &middot; replay &middot; distill</sub>
+- Lifecycle-Aware Federated Continual Learning in Mobile Autonomous Systems (**Submitted to IEEE 2026**) [[paper](https://doi.org/10.48550/arXiv.2604.20745)] [[pdf](https://arxiv.org/pdf/2604.20745)] <sub>edge &middot; replay &middot; resource</sub>
+- Knowledge-Aware Evolution for Streaming Federated Continual Learning with Category Overlap and without Task Identifiers (**arXiv 2026**) [[paper](https://doi.org/10.48550/arXiv.2601.19788)] [[pdf](https://arxiv.org/pdf/2601.19788)] <sub>online &middot; replay &middot; resource</sub>
+- From Selection to Scheduling: Federated Geometry-Aware Correction Makes Exemplar Replay Work Better under Continual Dynamic Heterogeneity (**CVPR 2026**) [[paper](https://doi.org/10.48550/arXiv.2604.08617)] [[pdf](https://arxiv.org/pdf/2604.08617)] <sub>edge &middot; replay &middot; distill</sub>
+- FeDMRA: Federated Incremental Learning with Dynamic Memory Replay Allocation (**arXiv 2026**) [[paper](https://doi.org/10.48550/arXiv.2603.28455)] [[pdf](https://arxiv.org/pdf/2603.28455)] <sub>FCIL &middot; replay &middot; resource</sub>
+- Federated continual learning: A comprehensive survey on lifelong and privacy-preserving learning over distributed and non-stationary data (**Neurocomputing, Volume 694, 2026, 133929 2026**) [[paper](https://doi.org/10.48550/arXiv.2606.11272)] [[pdf](https://arxiv.org/pdf/2606.11272)] <sub>survey &middot; domain/seg &middot; replay</sub>
+- Federated continual learning meets digital twins: A survey on methods, intersections and perspectives (**Neurocomputing 2026**) [[paper](https://doi.org/10.1016/j.neucom.2026.133366)] <sub>survey &middot; domain/seg &middot; aggregation</sub>
+- Federated Continual Learning for Privacy-Preserving Hospital Imaging Classification (**arXiv 2026**) [[paper](https://doi.org/10.48550/arXiv.2601.06742)] [[pdf](https://arxiv.org/pdf/2601.06742)] <sub>graph &middot; replay &middot; prototype</sub>
+- FedCapD: Federated class-incremental learning via capsule distillation and diffusion replay (**Neurocomputing 2026**) [[paper](https://doi.org/10.1016/j.neucom.2026.133365)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- DriftGuard: Mitigating Asynchronous Data Drift in Federated Learning (**13 pages, 9 figures 2026**) [[paper](https://doi.org/10.48550/arXiv.2603.18872)] [[pdf](https://arxiv.org/pdf/2603.18872)] [[code](https://github.com/blessonvar/DriftGuard)] <sub>edge &middot; resource</sub>
+- Canonicalized Stable-List Replay for Private Federated Continual Learning over Language-Model Embeddings (**arXiv 2026**) [[paper](https://doi.org/10.48550/arXiv.2606.00426)] [[pdf](https://arxiv.org/pdf/2606.00426)] <sub>replay &middot; aggregation &middot; privacy</sub>
+- C2FL: Clustered Continual Federated Learning under Spatial and Temporal Drift (**arXiv 2026**) [[paper](https://doi.org/10.48550/arXiv.2606.18003)] [[pdf](https://arxiv.org/pdf/2606.18003)] <sub>domain/seg &middot; generative &middot; data-free</sub>
+- ARMOR: Adaptive Resilience Against Model Poisoning Attacks in Continual Federated Learning for Mobile Indoor Localization (**arXiv 2026**) [[paper](https://doi.org/10.48550/arXiv.2603.19594)] [[pdf](https://arxiv.org/pdf/2603.19594)] <sub>personalized &middot; regularize &middot; projection</sub>
+- Accurate and Resource-Efficient Federated Continual Learning (**Technical Report 2026**) [[paper](https://doi.org/10.48550/arXiv.2606.11480)] [[pdf](https://arxiv.org/pdf/2606.11480)] [[code](https://github.com/JebacyrilArockiaraj/Fed-RAN-SSL)] <sub>replay &middot; prototype &middot; resource</sub>
+- A federated class-incremental learning framework with dynamic client participation and evolution for machine fault diagnosis (**Advanced Engineering Informatics 2026**) [[paper](https://doi.org/10.1016/j.aei.2026.104700)] <sub>FCIL</sub>
+
+---
+
+## 2025
+
+- Vertical Federated Continual Learning via Evolving Prototype Knowledge (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2502.09152)] [[pdf](https://arxiv.org/pdf/2502.09152)] <sub>edge &middot; prototype &middot; resource</sub>
+- Task-Agnostic Federated Continual Learning via Replay-Free Gradient Projection (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2509.21606)] [[pdf](https://arxiv.org/pdf/2509.21606)] <sub>online &middot; replay &middot; regularize</sub>
+- Spatio-Temporal Gradient Matching for Federated Continual Learning (**ICML 2025**)  <sub>FCL</sub>
+- Sparse-FCL: Sparse Federated Continual Learning for Evolving Mobile Edge Computing Environments (**IEEE Transactions on Services Computing 2025**) [[paper](https://doi.org/10.1109/tsc.2025.3583174)] <sub>edge &middot; prompt &middot; resource</sub>
+- Sparse personalized federated class-incremental learning (**Information Sciences 2025**) [[paper](https://doi.org/10.1016/j.ins.2025.121992)] <sub>FCIL</sub>
+- SacFL: Self-Adaptive Federated Continual Learning for Resource-Constrained End Devices (**IEEE TNNLS 2025**) [[paper](https://doi.org/10.1109/tnnls.2025.3565827)] [[pdf](https://arxiv.org/pdf/2505.00365)] <sub>benchmark &middot; FCIL &middot; resource</sub>
+- Rethinking Knowledge Distillation in Collaborative Machine Learning: Memory, Knowledge, and Their Interactions (**Published in IEEE TNSE 2025**) [[paper](https://doi.org/10.48550/arXiv.2512.19972)] [[pdf](https://arxiv.org/pdf/2512.19972)] <sub>domain/seg &middot; replay &middot; distill</sub>
+- Resource-Constrained Federated Continual Learning: What Does Matter? (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2501.08737)] [[pdf](https://arxiv.org/pdf/2501.08737)] <sub>benchmark &middot; domain/seg &middot; resource</sub>
+- Re-Fed+: A Better Replay Strategy for Federated Incremental Learning (**IEEE TPAMI 2025**) <sub>replay</sub>
+- Plastic Distillation and Local Class Augment for Federated Class Incremental Learning (**Applied Soft Computing 2025**) [[paper](https://doi.org/10.1016/j.asoc.2025.113647)] <sub>FCIL &middot; distill &middot; resource</sub>
+- pFedMxF: Personalized Federated Class-Incremental Learning with Mixture of Frequency Aggregation (**CVPR 2025**) [[paper](https://doi.org/10.1109/cvpr52734.2025.02853)] [[pdf](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhang_pFedMxF_Personalized_Federated_Class-Incremental_Learning_with_Mixture_of_Frequency_Aggregation_CVPR_2025_paper.pdf)] <sub>FCIL &middot; prompt &middot; regularize</sub>
+- pFedDSH: Enabling Knowledge Transfer in Personalized Federated Learning through Data-free Sub-Hypernetwork (**12 pages, 4 figures 2025**) [[paper](https://doi.org/10.48550/arXiv.2508.05157)] [[pdf](https://arxiv.org/pdf/2508.05157)] <sub>personalized &middot; generative &middot; data-free</sub>
+- Personalized Federated Class-Incremental Learning through Critical Parameter Transfer (**ICASSP 2025**) [[paper](https://doi.org/10.1109/icassp49660.2025.10887681)] <sub>FCIL &middot; aggregation &middot; resource</sub>
+- On-Device Federated Continual Learning on RISC-V-based Ultra-Low-Power SoC for Intelligent Nano-Drone Swarms (**2 pages, 2 tables, 1 figure. Accepted as a poster at the RISC-V Sum... 2025**) [[paper](https://doi.org/10.48550/arXiv.2503.17436)] [[pdf](https://arxiv.org/pdf/2503.17436)] <sub>edge &middot; regularize &middot; projection</sub>
+- MOTION: Multi-Sculpt Evolutionary Coarsening for Federated Continual Graph Learning (**NeurIPS 2025**) <sub>graph</sub>
+- Loci: Federated Continual Learning of Heterogeneous Tasks at Edge (**IEEE TPDS 2025**) [[paper](https://doi.org/10.1109/tpds.2025.3531123)] <sub>graph &middot; aggregation &middot; resource</sub>
+- Large-Small Model Collaborative Framework for Federated Continual Learning (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2508.09489)] [[pdf](https://arxiv.org/pdf/2508.09489)] <sub>personalized &middot; distill &middot; architecture</sub>
+- Knowledge efficient federated continual learning for industrial edge systems (**IEEE TNSE 2025**) [[paper](https://doi.org/10.1109/tnse.2025.3544614)] <sub>edge &middot; distill &middot; resource</sub>
+- Improving Generalization in Heterogeneous Federated Continual Learning via Spatio-Temporal Gradient Matching with Prototypical Coreset (**25 pages, 18 figures, 5 tables 2025**) [[paper](https://doi.org/10.48550/arXiv.2506.12031)] [[pdf](https://arxiv.org/pdf/2506.12031)] <sub>generative &middot; data-free &middot; replay</sub>
+- Handling Spatial-Temporal Data Heterogeneity for Federated Continual Learning via Tail Anchor (**CVPR 2025**) [[paper](https://doi.org/10.1109/cvpr52734.2025.00459)] [[pdf](https://arxiv.org/pdf/2412.18355)] [[code](https://github.com/SkyOfBeginning/FedTA_CVPR2025)] <sub>edge &middot; distill &middot; prototype</sub>
+- Forget Less, Learn More: Contrastive-Based Federated Class Incremental Learning with a Low-Dimensional Projection Layer (**CVPRW 2025**) [[paper](https://openaccess.thecvf.com/content/CVPR2025W/FedVision/papers/Khazaei_Forget_Less_Learn_More_Contrastive-Based_Federated_Class_Incremental_Learning_with_CVPRW_2025_paper.pdf)] <sub>FCIL &middot; regularize &middot; projection</sub>
+- FedSSI: Rehearsal-Free Continual Federated Learning with Synergistic Synaptic Intelligence (**ICML 2025**) [[paper](https://openreview.net/forum?id=2CXQsrVBlN)] <sub>replay &middot; regularize &middot; projection</sub>
+- FedGTEA: Federated Class-Incremental Learning with Gaussian Task Embedding and Alignment (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2510.12927)] [[pdf](https://arxiv.org/pdf/2510.12927)] <sub>FCIL &middot; resource &middot; preprint</sub>
+- Federated Continual Learning: Concepts, Challenges, and Solutions (**arXiv 2025**) [[paper](https://doi.org/10.48550/arxiv.2502.07059)] [[pdf](https://arxiv.org/pdf/2502.07059)] <sub>survey &middot; personalized &middot; resource</sub>
+- Federated Continual Learning via Orchestrating Multi-Scale Expertise (**NeurIPS 2025**)  <sub>FCL</sub>
+- Federated Continual Learning Goes Online: Uncertainty-Aware Memory Management for Vision Tasks and Beyond (**ICLR 2025**) [[paper](https://doi.org/10.48550/arXiv.2405.18925v4)] [[pdf](https://arxiv.org/pdf/2405.18925v4)] <sub>online &middot; generative &middot; data-free</sub>
+- Federated continual learning for vision-based plastic classification in recycling (**Waste Management 2025**) [[paper](https://doi.org/10.1016/j.wasman.2025.114976)] <sub>FCL</sub>
+- Federated continual learning for task-incremental and class-incremental problems: A survey (**ESWA 2025**) [[paper](https://doi.org/10.1016/j.eswa.2025.129278)] <sub>survey &middot; FCIL</sub>
+- Federated Continual Learning Based on Weakly Supervised Diffusion Models for Disease Diagnosis (**IEEE IoT-J 2025**) [[paper](https://doi.org/10.1109/jiot.2025.3535628)] [[code](https://github.com/hysshy/FCL4DD)] <sub>generative &middot; data-free &middot; replay</sub>
+- Federated Continual Graph Learning (**KDD 2025**) [[paper](https://doi.org/10.48550/arXiv.2411.18919)] [[pdf](https://arxiv.org/pdf/2411.18919)] <sub>graph &middot; distill &middot; prototype</sub>
+- Federated Continual 3D Segmentation With Single-round Communication (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2503.15414)] [[pdf](https://arxiv.org/pdf/2503.15414)] <sub>domain/seg &middot; distill &middot; aggregation</sub>
+- Federated Class-Incremental Learning: A Survey (**Preprint 2025**) [[paper](https://doi.org/10.1109/icmlt65785.2025.11193246)] <sub>survey &middot; FCIL &middot; replay</sub>
+- Federated Class-Incremental Learning: A Hybrid Approach Using Latent Exemplars and Data-Free Techniques to Address Local and Global Forgetting (**ICLR 2025**) [[paper](https://doi.org/10.48550/arXiv.2501.15356)] [[pdf](https://arxiv.org/pdf/2501.15356)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- Federated Class-Incremental Learning with Prompting (**ESWA 2025**) [[paper](https://doi.org/10.1016/j.eswa.2025.129416)] [[pdf](https://arxiv.org/pdf/2310.08948)] <sub>FCIL &middot; replay &middot; prompt</sub>
+- Federated Class-Incremental Learning with New-Class Augmented Self-Distillation (**arXiv 2025**) [[paper](https://doi.org/10.48550/arxiv.2401.00622)] [[pdf](https://arxiv.org/pdf/2401.00622)] <sub>FCIL &middot; distill &middot; resource</sub>
+- Federated Class-Incremental Learning via Weighted Aggregation and Distillation (**IEEE IoT-J 2025**) [[paper](https://doi.org/10.1109/jiot.2025.3553901)] [[code](https://github.com/wufeng10010/WAD-FCIL)] <sub>FCIL &middot; replay &middot; distill</sub>
+- FedAGC: Federated Continual Learning with Asymmetric Gradient Correction (**ICCV 2025**) <sub>regularize &middot; projection</sub>
+- Fed-GCC: Global classifier consensus for conventional/task-free federated class-incremental learning (**Knowledge-Based Systems 2025**) [[paper](https://doi.org/10.1016/j.knosys.2025.114131)] <sub>FCIL &middot; resource</sub>
+- FCL-IWQMS: Federated Continual Learning and IoT-Based Water Quality Monitoring System for Adaptive Real-Time Insights (**Preprint 2025**) [[paper](https://doi.org/10.1109/icc52391.2025.11161014)] <sub>replay &middot; aggregation</sub>
+- Explainable federated class incremental learning for Encrypted Network Traffic classification (**Computer Networks 2025**) [[paper](https://doi.org/10.1016/j.comnet.2025.111448)] <sub>FCIL &middot; aggregation &middot; resource</sub>
+- Evaluation Framework for Centralized and Decentralized Aggregation Algorithm in Federated Systems (**Cureus J Comput Sci 3: es44389-026-00028-0 (2026) 2025**) [[paper](https://doi.org/10.48550/arXiv.2512.10987)] [[pdf](https://arxiv.org/pdf/2512.10987)] <sub>aggregation &middot; resource</sub>
+- Enhancing Federated Class-Incremental Learning via Spatial-Temporal Statistics Aggregation (**WWW 2025**) [[paper](https://doi.org/10.48550/arXiv.2506.01327)] [[pdf](https://arxiv.org/pdf/2506.01327)] [[code](https://github.com/Yuqin-G/STSA)] <sub>FCIL &middot; aggregation &middot; resource</sub>
+- Dynamic Allocation Hypernetwork with Adaptive Model Recalibration for Federated Continual Learning (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2503.18064)] [[pdf](https://arxiv.org/pdf/2503.18064)] [[code](https://github.com/jinlab-imvr/FedDAH)] <sub>domain/seg &middot; aggregation &middot; architecture</sub>
+- DOLFIN: Balancing Stability and Plasticity in Federated Continual Learning (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2510.13567)] [[pdf](https://arxiv.org/pdf/2510.13567)] <sub>online &middot; replay &middot; prompt</sub>
+- Decentralized Dynamic Cooperation of Personalized Models for Federated Continual Learning (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2509.23683)] [[pdf](https://arxiv.org/pdf/2509.23683)] [[code](https://github.com/ydn3229/DCFCL)] <sub>personalized &middot; aggregation &middot; resource</sub>
+- Closed-Form Merging of Parameter-Efficient Modules for Federated Continual Learning (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2410.17961)] [[pdf](https://arxiv.org/pdf/2410.17961)] <sub>FCIL &middot; prompt &middot; resource</sub>
+- Class-wise Balancing Data Replay for Federated Class-Incremental Learning (**NeurIPS 2025**) [[paper](https://doi.org/10.48550/arXiv.2507.07712v4)] [[pdf](https://arxiv.org/pdf/2507.07712v4)] <sub>FCIL &middot; replay</sub>
+- CGoFed: Constrained Gradient Optimization Strategy for Federated Class Incremental Learning (**IEEE TKDE 2025**) [[paper](https://doi.org/10.1109/tkde.2025.3544605)] <sub>FCIL &middot; regularize &middot; projection</sub>
+- CAN: Leveraging Clients as Navigators for Generative Replay in Federated Continual Learning (**ICML 2025**) <sub>generative &middot; data-free &middot; replay</sub>
+- C2Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning (**NeurIPS 2025**) [[paper](https://doi.org/10.48550/arXiv.2509.19674)] [[pdf](https://arxiv.org/pdf/2509.19674)] [[code](https://github.com/zhoujiahuan1991/NeurIPS2025-C2Prompt)] <sub>edge &middot; prompt &middot; resource</sub>
+- ASCHOPLEX encounters Dafne: a federated continuous learning project for the generalizability of the Choroid Plexus automatic segmentation (**arXiv 2025**) [[paper](https://doi.org/10.48550/arXiv.2512.20741)] [[pdf](https://arxiv.org/pdf/2512.20741)] <sub>domain/seg &middot; preprint</sub>
+- An Efficient Privacy-preserving Intrusion Detection Scheme for UAV Swarm Networks (**This paper has been accepted for publication in the Proceedings of... 2025**) [[paper](https://doi.org/10.48550/arXiv.2511.22791)] [[pdf](https://arxiv.org/pdf/2511.22791)] <sub>domain/seg &middot; aggregation &middot; privacy</sub>
+- AFCL: Analytic Federated Continual Learning for Spatio-Temporal Invariance of Non-IID Data (**23 pages, 5 figures, 5 tables 2025**) [[paper](https://doi.org/10.48550/arXiv.2505.12245)] [[pdf](https://arxiv.org/pdf/2505.12245)] <sub>online &middot; aggregation &middot; resource</sub>
+- Adaptive federated class-Incremental learning for reducing catastrophic forgetting (**ESWA 2025**) [[paper](https://doi.org/10.1016/j.eswa.2025.128442)] <sub>FCIL</sub>
+- A Contemporary Survey of Federated Continual Learning (**Zenodo preprint 2025**) [[paper](https://doi.org/10.5281/zenodo.14768027)] [[pdf](https://zenodo.org/records/14768027/files/A_Contemporary_Survey_of_Federated_Continual_Learning_v0.2.pdf?download=1)] <sub>survey &middot; preprint</sub>
+
+---
+
+## 2024
+
+- Variational Bayes for Federated Continual Learning (**arXiv 2024**) [[paper](https://doi.org/10.48550/arxiv.2405.14291)] [[pdf](https://arxiv.org/pdf/2405.14291)] <sub>online &middot; resource &middot; preprint</sub>
+- Using Diffusion Models as Generative Replay in Continual Federated Learning -- What will Happen? (**arXiv 2024**) [[paper](https://doi.org/10.48550/arXiv.2411.06618)] [[pdf](https://arxiv.org/pdf/2411.06618)] <sub>generative &middot; data-free &middot; replay</sub>
+- Traceable Federated Continual Learning (**CVPR 2024**) [[paper](https://doi.org/10.1109/cvpr52733.2024.01223)] [[pdf](https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_Traceable_Federated_Continual_Learning_CVPR_2024_paper.pdf)] [[code](https://github.com/POwerWeirdo/TagFCL)] <sub>edge &middot; aggregation &middot; resource</sub>
+- Towards Long-Term Remembering in Federated Continual Learning (**Cognitive Computation 2024**) [[paper](https://doi.org/10.1007/s12559-024-10314-z)] <sub>FCL</sub>
+- Towards Efficient Replay in Federated Incremental Learning (**CVPR 2024**) [[paper](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Towards_Efficient_Replay_in_Federated_Incremental_Learning_CVPR_2024_paper.pdf)] <sub>replay &middot; resource</sub>
+- Towards Continual Federated Learning of Monocular Depth for Autonomous Vehicles (**Preprint 2024**) [[paper](https://doi.org/10.1109/vtc2024-fall63153.2024.10757948)] <sub>replay</sub>
+- Toward Ever-Evolution Network Threats: A Hierarchical Federated Class-Incremental Learning Approach for Network Intrusion Detection in IIoT (**IEEE IoT-J 2024**) [[paper](https://doi.org/10.1109/jiot.2024.3408634)] <sub>FCIL &middot; aggregation &middot; resource</sub>
+- Text-enhanced data-free approach for federated class-incremental learning (**CVPR 2024**) [[paper](https://doi.org/10.1109/cvpr52733.2024.02253)] [[pdf](https://arxiv.org/pdf/2403.14101)] [[code](https://github.com/tmtuan1307/lander)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- SPD-CFL: Stepwise Parameter Dropout for Efficient Continual Federated Learning (**arXiv 2024**) [[paper](https://doi.org/10.48550/arxiv.2405.09394)] [[pdf](https://arxiv.org/pdf/2405.09394)] <sub>prompt &middot; resource &middot; preprint</sub>
+- Resource-Efficient Heterogenous Federated Continual Learning on Edge (**Preprint 2024**) [[paper](https://doi.org/10.23919/date58400.2024.10546889)] <sub>edge &middot; aggregation &middot; resource</sub>
+- Rehearsal-Free Continual Federated Learning with Synergistic Synaptic Intelligence (**arXiv 2024**) [[paper](https://doi.org/10.48550/arxiv.2412.13779)] [[pdf](https://arxiv.org/pdf/2412.13779)] <sub>edge &middot; replay &middot; regularize</sub>
+- PIP: Prototypes-Injected Prompt for Federated Class Incremental Learning (**CIKM 2024**) [[paper](https://doi.org/10.1145/3627673.3679794)] [[pdf](https://arxiv.org/pdf/2407.20705)] [[code](https://github.com/anwarmaxsum/PIP)] <sub>FCIL &middot; replay &middot; prompt</sub>
+- Pilora: Prototype guided incremental lora for federated class-incremental learning (**LNCS 2024**) [[paper](https://doi.org/10.1007/978-3-031-73650-6_9)] [[pdf](https://arxiv.org/pdf/2401.02094)] [[code](https://github.com/Ghy0501/PILoRA)] <sub>FCIL &middot; prompt &middot; prototype</sub>
+- Pick-a-Back: Selective Device-to-Device Knowledge Transfer in Federated Continual Learning (**LNCS 2024**) [[paper](https://doi.org/10.1007/978-3-031-73030-6_10)] <sub>edge &middot; distill &middot; resource</sub>
+- PI-Fed: Continual Federated Learning With Parameter-Level Importance Aggregation (**IEEE IoT-J 2024**) [[paper](https://doi.org/10.1109/jiot.2024.3440029)] <sub>replay &middot; aggregation</sub>
+- Personalized Federated Continual Learning via Multi-Granularity Prompt (**KDD 2024**) [[paper](https://doi.org/10.1145/3637528.3671948)] [[pdf](https://arxiv.org/pdf/2407.00113)] <sub>personalized &middot; distill &middot; prompt</sub>
+- Parameterizing Federated Continual Learning for Reproducible Research (**Communications in computer and information science 2024**) [[paper](https://doi.org/10.1007/978-3-031-74643-7_35)] [[pdf](https://arxiv.org/pdf/2406.02015)] <sub>resource</sub>
+- Overcoming Spatial-Temporal Catastrophic Forgetting for Federated Class-Incremental Learning (**Preprint 2024**) [[paper](https://doi.org/10.1145/3664647.3681384)] [[code](https://github.com/SkyOfBeginning/FedCBC)] <sub>FCIL &middot; distill &middot; resource</sub>
+- Overcoming Catastrophic Forgetting in Federated Class-Incremental Learning via Federated Global Twin Generator (**arXiv 2024**) [[paper](https://doi.org/10.48550/arxiv.2407.11078)] [[pdf](https://arxiv.org/pdf/2407.11078)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- On the Convergence of Continual Federated Learning Using Incrementally Aggregated Gradients (**arXiv 2024**) [[paper](https://doi.org/10.48550/arxiv.2411.07959)] [[pdf](https://arxiv.org/pdf/2411.07959)] <sub>FCIL &middot; replay &middot; resource</sub>
+- New Continual Federated Learning System for Intrusion Detection in SDNâ€Based Edge Computing (**Concurrency and Computation Practice and Experience 2024**) [[paper](https://doi.org/10.1002/cpe.8332)] <sub>edge &middot; resource</sub>
+- Masked Autoencoders are Parameter-Efficient Federated Continual Learners (**arXiv 2024**) [[paper](https://doi.org/10.48550/arXiv.2411.01916)] [[pdf](https://arxiv.org/pdf/2411.01916)] [[code](https://github.com/ycheoo/pMAE)] <sub>prompt &middot; resource &middot; preprint</sub>
+- General Federated Class-Incremental Learning With Lightweight Generative Replay (**IEEE IoT-J 2024**) [[paper](https://doi.org/10.1109/jiot.2024.3434600)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- FPPL: An Efficient and Non-IID Robust Federated Continual Learning Framework (**arXiv 2024**) [[paper](https://doi.org/10.1109/bigdata62323.2024.10825220)] [[pdf](https://arxiv.org/pdf/2411.01904)] [[code](https://github.com/ycheoo/FPPL)] <sub>edge &middot; replay &middot; prompt</sub>
+- FL-Clip: Bridging Plasticity and Stability in Pre-Trained Federated Class-Incremental Learning Models (**Preprint 2024**) [[paper](https://doi.org/10.1109/icme57554.2024.10688122)] <sub>FCIL &middot; replay &middot; distill</sub>
+- FedSKF: Selective Knowledge Fusion via Optimal Transport in Federated Class Incremental Learning (**Electronics 2024**) [[paper](https://doi.org/10.3390/electronics13091772)] [[pdf](https://www.mdpi.com/2079-9292/13/9/1772/pdf?version=1714810462)] <sub>FCIL &middot; distill &middot; prototype</sub>
+- FedRewind: Rewinding Continual Model Exchange for Decentralized Federated Learning (**arXiv 2024**) [[paper](https://doi.org/10.48550/arXiv.2411.09842)] [[pdf](https://arxiv.org/pdf/2411.09842)] <sub>replay &middot; aggregation &middot; preprint</sub>
+- FedProK: Trustworthy Federated Class-Incremental Learning via Prototypical Feature Knowledge Transfer (**arXiv 2024**) [[paper](https://doi.org/10.1109/cvprw63382.2024.00424)] [[pdf](https://arxiv.org/pdf/2405.02685)] <sub>FCIL &middot; distill &middot; prototype</sub>
+- FedMeS: Personalized Federated Continual Learning Leveraging Local Memory (**arXiv 2024**) [[paper](https://doi.org/10.48550/arxiv.2404.12710)] [[pdf](https://arxiv.org/pdf/2404.12710)] <sub>personalized &middot; replay &middot; preprint</sub>
+- Federated Orthogonal Training: Mitigating Global Catastrophic Forgetting in Continual Federated Learning (**arXiv 2024**) [[paper](https://doi.org/10.48550/arxiv.2309.01289)] [[pdf](https://arxiv.org/pdf/2309.01289)] <sub>regularize &middot; projection &middot; aggregation</sub>
+- Federated Learning of Socially Appropriate Agent Behaviours in Simulated Home Environments (**Accepted at the Workshop on Lifelong Learning and Personalization i... 2024**) [[paper](https://doi.org/10.48550/arXiv.2403.07586)] [[pdf](https://arxiv.org/pdf/2403.07586)] <sub>replay</sub>
+- Federated continual representation learning for evolutionary distributed intrusion detection in Industrial Internet of Things (**Engineering Applications of Artificial Intelligence 2024**) [[paper](https://doi.org/10.1016/j.engappai.2024.108826)] <sub>FCL</sub>
+- Federated continual learning via prompt-based dual knowledge transfer (**ICML 2024**) [[paper](https://openreview.net/forum?id=dFngMTnV4C)] <sub>edge &middot; distill &middot; prompt</sub>
+- Federated Continual Learning via Knowledge Fusion: A Survey (**arXiv 2024**) [[paper](https://doi.org/10.48550/arxiv.2312.16475)] [[pdf](https://arxiv.org/pdf/2312.16475)] <sub>survey &middot; online &middot; distill</sub>
+- Federated Continual Learning for Edge-AI: A Comprehensive Survey (**arXiv 2024**) [[paper](https://doi.org/10.48550/arxiv.2411.13740)] [[pdf](https://arxiv.org/pdf/2411.13740)] <sub>survey &middot; FCIL &middot; resource</sub>
+- Federated continual learning based on weight self-optimization algorithm in non-iid (**Preprint 2024**) [[paper](https://doi.org/10.1117/12.3032841)] <sub>edge &middot; resource</sub>
+- Federated continual learning based on prototype learning (**Scientia Sinica Informationis 2024**) [[paper](https://doi.org/10.1360/ssi-2023-0239)] [[pdf](https://www.sciengine.com/doi/pdf/044FB06EC61348CAA404E3B0E7705714)] <sub>edge &middot; replay &middot; distill</sub>
+- Federated Class-Incremental Learning with Hierarchical Generative Prototypes (**arXiv 2024**) [[paper](https://doi.org/10.48550/arXiv.2406.02447v4)] [[pdf](https://arxiv.org/pdf/2406.02447v4)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- Federated Class-Incremental Learning With Dynamic Feature Extractor Fusion (**IEEE TMC 2024**) [[paper](https://doi.org/10.1109/tmc.2024.3419096)] <sub>FCIL &middot; resource</sub>
+- Federated Class Incremental Learning: A Pseudo Feature Based Approach Without Old Data (**LNCS 2024**) [[paper](https://doi.org/10.1007/978-981-96-0963-5_21)] [[pdf](https://openaccess.thecvf.com/content/ACCV2024/papers/Yoo_Federated_Class_Incremental_Learning_A_Pseudo_Feature_Based_Approach_Without_ACCV_2024_paper.pdf)] <sub>FCIL &middot; prototype</sub>
+- FedCL-Ensemble Learning: A Framework of Federated Continual Learning with Ensemble Transfer Learning Enhanced for Alzheimer's MRI Classifications while Preserving Privacy (**6 pages, 4 figures 2024**) [[paper](https://doi.org/10.48550/arXiv.2411.12756)] [[pdf](https://arxiv.org/pdf/2411.12756)] <sub>aggregation &middot; privacy</sub>
+- Feature Aggregation with Latent Generative Replay for Federated Continual Learning of Socially Appropriate Robot Behaviours (**8 pages, 4 figures, IEEE RA-L submission 2024**) [[paper](https://doi.org/10.48550/arXiv.2405.15773)] [[pdf](https://arxiv.org/pdf/2405.15773)] <sub>generative &middot; data-free &middot; replay</sub>
+- FCLLM-DT: Enpowering Federated Continual Learning With Large Language Models for Digital-Twin-Based Industrial IoT (**IEEE IoT-J 2024**) [[paper](https://doi.org/10.1109/jiot.2024.3510553)] <sub>FCL</sub>
+- FCLA-DT: Federated Continual Learning with Authentication for Distributed Digital Twin-Based Industrial IoT (**Journal of Communications and Information Networks 2024**) [[paper](https://doi.org/10.23919/jcin.2024.10820161)] <sub>edge &middot; aggregation &middot; resource</sub>
+- FCIL-MSN: A Federated Class-Incremental Learning Method for Multisatellite Networks (**IEEE Transactions on Geoscience and Remote Sensing 2024**) [[paper](https://doi.org/10.1109/tgrs.2024.3406817)] <sub>FCIL &middot; distill &middot; prototype</sub>
+- Facing spatiotemporal heterogeneity: A unified federated continual learning framework with self-challenge rehearsal for industrial monitoring tasks (**Knowledge-Based Systems 2024**) [[paper](https://doi.org/10.1016/j.knosys.2024.111491)] <sub>replay &middot; resource</sub>
+- Exploring the Efficacy of Federated-Continual Learning Nodes with Attention-Based Classifier for Robust Web Phishing Detection: An Empirical Investigation (**arXiv 2024**) [[paper](https://doi.org/10.1109/apci61480.2024.10617245)] [[pdf](https://arxiv.org/pdf/2405.03537)] <sub>edge &middot; replay &middot; resource</sub>
+- Exemplar-condensed Federated Class-incremental Learning (**arXiv 2024**) [[paper](https://doi.org/10.48550/arXiv.2412.18926)] [[pdf](https://arxiv.org/pdf/2412.18926)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- Evaluating Differential Privacy in Federated Continual Learning: A Catastrophic Forgetting-Performance Tradeoff Analysis (**Preprint 2024**) [[paper](https://doi.org/10.1109/candar64496.2024.00023)] <sub>edge &middot; privacy &middot; resource</sub>
+- Energy-Efficient Personalized Federated Continual Learning on Edge (**IEEE Embedded Systems Letters 2024**) [[paper](https://doi.org/10.1109/les.2024.3439552)] <sub>personalized &middot; generative &middot; data-free</sub>
+- Efficient knowledge management for heterogeneous federated continual learning on resource-constrained edge devices (**FGCS 2024**) [[paper](https://doi.org/10.1016/j.future.2024.02.018)] <sub>benchmark &middot; edge &middot; resource</sub>
+- Diffusion-Driven Data Replay: A Novel Approach to Combat Forgetting in Federated Class Continual Learning (**LNCS 2024**) [[paper](https://doi.org/10.1007/978-3-031-73404-5_18)] [[pdf](https://arxiv.org/pdf/2409.01128)] [[code](https://github.com/jinglin-liang/DDDR)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- Data-Free Federated Class Incremental Learning with Diffusion-Based Generative Memory (**arXiv 2024**) [[paper](https://doi.org/10.48550/arXiv.2405.17457)] [[pdf](https://arxiv.org/pdf/2405.17457)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- Continual Federated Learning for Dynamic Data Environments (**Preprint 2024**) [[paper](https://doi.org/10.1109/pacrim61180.2024.10690192)] <sub>aggregation</sub>
+- COALA: A Practical and Vision-Centric Federated Learning Platform (**ICML 2024**) [[paper](https://doi.org/10.48550/arXiv.2407.16560)] [[pdf](https://arxiv.org/pdf/2407.16560)] [[code](https://github.com/SonyResearch/COALA)] <sub>domain/seg</sub>
+- Buffer-based Gradient Projection for Continual Federated Learning (**A preliminary version of this work was presented at the Federated L... 2024**) [[paper](https://doi.org/10.48550/arXiv.2409.01585)] [[pdf](https://arxiv.org/pdf/2409.01585)] [[code](https://github.com/shenghongdai/Fed-A-GEM)] <sub>edge &middot; replay &middot; regularize</sub>
+- Adaptive Federated Continual Learning for Heterogeneous Edge Environments: A Data-Free Distillation Approach (**Preprint 2024**) [[paper](https://doi.org/10.1109/globecom52923.2024.10901105)] <sub>edge &middot; generative &middot; data-free</sub>
+- Accurate Forgetting for Heterogeneous Federated Continual Learning (**ICLR 2024**) [[paper](https://doi.org/10.48550/arXiv.2502.14205)] [[pdf](https://arxiv.org/pdf/2502.14205)] <sub>edge &middot; generative &middot; data-free</sub>
+- A Multi-Head Federated Continual Learning Approach for Improved Flexibility and Robustness in Edge Environments (**International Journal of Networking and Computing 2024**) [[paper](https://doi.org/10.15803/ijnc.14.2_123)] [[pdf](https://www.jstage.jst.go.jp/article/ijnc/14/2/14_123/_pdf)] <sub>edge &middot; resource</sub>
+- A Federated Continual Learning Framework for Sustainable Network Anomaly Detection in O-RAN (**Preprint 2024**) [[paper](https://doi.org/10.1109/wcnc57260.2024.10570951)] [[pdf](https://oulurepo.oulu.fi/bitstream/10024/51580/1/nbnfioulu-202408225551.pdf)] <sub>edge &middot; replay &middot; resource</sub>
+
+---
+
+## 2023
+
+- TARGET: Federated Class-Continual Learning via Exemplar-Free Distillation (**ICCV 2023**) [[paper](https://doi.org/10.1109/iccv51070.2023.00441)] [[pdf](https://arxiv.org/pdf/2303.06937)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- Quantifying Catastrophic Forgetting in Continual Federated Learning (**Preprint 2023**) [[paper](https://doi.org/10.1109/icassp49357.2023.10097140)] <sub>edge &middot; replay &middot; resource</sub>
+- Privacy-Preserving Federated Class-Incremental Learning (**IEEE Transactions on Machine Learning in Communications and Networking 2023**) [[paper](https://doi.org/10.1109/tmlcn.2023.3344074)] [[pdf](https://ieeexplore.ieee.org/ielx7/9882533/10070384/10363211.pdf)] <sub>FCIL &middot; aggregation &middot; privacy</sub>
+- Personalized Federated Continual Learning for Task-Incremental Biometrics (**IEEE IoT-J 2023**) [[paper](https://doi.org/10.1109/jiot.2023.3284843)] <sub>personalized &middot; distill &middot; aggregation</sub>
+- Peer-to-Peer Federated Continual Learning for Naturalistic Driving Action Recognition (**arXiv 2023**) [[paper](https://doi.org/10.1109/cvprw59228.2023.00553)] [[pdf](https://arxiv.org/pdf/2304.07421)] <sub>personalized &middot; resource &middot; preprint</sub>
+- No One Left Behind: Real-World Federated Class-Incremental Learning (**IEEE TPAMI 2023**) [[paper](https://doi.org/10.1109/tpami.2023.3334213)] [[pdf](https://arxiv.org/pdf/2302.00903)] [[code](https://github.com/JiahuaDong/LGA)] <sub>FCIL &middot; replay &middot; distill</sub>
+- Masked Autoencoders are Efficient Continual Federated Learners (**arXiv 2023**) [[paper](https://doi.org/10.48550/arXiv.2306.03542)] [[pdf](https://arxiv.org/pdf/2306.03542)] <sub>edge &middot; distill &middot; resource</sub>
+- Learning domain-heterogeneous speaker recognition systems with personalized continual federated learning (**EURASIP Journal on Audio Speech and Music Processing 2023**) [[paper](https://doi.org/10.1186/s13636-023-00299-2)] [[pdf](https://asmp-eurasipjournals.springeropen.com/counter/pdf/10.1186/s13636-023-00299-2)] <sub>domain/seg</sub>
+- Flexibility and Privacy: A Multi-Head Federated Continual Learning Framework for Dynamic Edge Environments (**CANDAR 2023**) [[paper](https://doi.org/10.1109/candar60563.2023.00009)] <sub>edge &middot; privacy &middot; resource</sub>
+- FedViT: Federated continual learning of vision transformer at edge (**FGCS 2023**) [[paper](https://doi.org/10.1016/j.future.2023.11.038)] <sub>edge &middot; resource</sub>
+- FedKNOW: Federated Continual Learning with Signature Task Knowledge Integration at Edge (**arXiv 2023**) [[paper](https://doi.org/10.1109/icde55515.2023.00033)] [[pdf](https://repository.tudelft.nl/file/File_6ef0a654-e93c-4a11-ac7c-eca9f90efc5f)] <sub>edge &middot; distill &middot; resource</sub>
+- FedINC: An Exemplar-Free Continual Federated Learning Framework with Small Labeled Data (**Preprint 2023**) [[paper](https://doi.org/10.1145/3625687.3625800)] <sub>edge &middot; prototype &middot; regularize</sub>
+- FedET: A Communication-Efficient Federated Class-Incremental Learning Framework Based on Enhanced Transformer (**IJCAI 2023**) [[paper](https://doi.org/10.24963/ijcai.2023/443)] [[pdf](https://www.ijcai.org/proceedings/2023/0443.pdf)] <sub>FCIL &middot; distill &middot; aggregation</sub>
+- Federated probability memory recall for federated continual learning (**Information Sciences 2023**) [[paper](https://doi.org/10.1016/j.ins.2023.02.015)] <sub>replay &middot; regularize &middot; projection</sub>
+- Federated Incremental Semantic Segmentation (**CVPR 2023**) [[paper](https://doi.org/10.1109/cvpr52729.2023.00383)] [[pdf](https://openaccess.thecvf.com/content/CVPR2023/papers/Dong_Federated_Incremental_Semantic_Segmentation_CVPR_2023_paper.pdf)] [[code](https://github.com/JiahuaDong/FISS)] <sub>domain/seg &middot; replay &middot; distill</sub>
+- Fed-CPrompt: Contrastive Prompt for Rehearsal-Free Federated Continual Learning (**arXiv 2023**) [[paper](https://doi.org/10.48550/arxiv.2307.04869)] [[pdf](https://arxiv.org/pdf/2307.04869)] <sub>replay &middot; prompt &middot; resource</sub>
+- Failure-Sentient Composition For Swarm-Based Drone Services (**11 pages, 14 figures, This paper is accepted in the 2023 IEEE Inter... 2023**) [[paper](https://doi.org/10.48550/arXiv.2305.13892)] [[pdf](https://arxiv.org/pdf/2305.13892)] <sub>FCL</sub>
+- Evaluating Differential Privacy in Federated Continual Learning (**Preprint 2023**) [[paper](https://doi.org/10.1109/vtc2023-fall60731.2023.10333463)] <sub>edge &middot; privacy &middot; resource</sub>
+- Ensemble and continual federated learning for classification tasks (**Machine Learning 2023**) [[paper](https://doi.org/10.1007/s10994-023-06330-z)] [[pdf](https://link.springer.com/content/pdf/10.1007/s10994-023-06330-z.pdf)] <sub>aggregation &middot; architecture</sub>
+- Energy-Efficient and Real-Time Sensing for Federated Continual Learning via Sample-Driven Control (**IEEE TMC 2023**) [[paper](https://doi.org/10.1109/tmc.2025.3597713)] [[pdf](https://arxiv.org/pdf/2310.07497)] <sub>edge &middot; resource</sub>
+- Don't Memorize; Mimic The Past: Federated Class Incremental Learning Without Episodic Memory (**arXiv 2023**) [[paper](https://doi.org/10.48550/arxiv.2307.00497)] [[pdf](https://arxiv.org/pdf/2307.00497)] <sub>FCIL &middot; generative &middot; data-free</sub>
+- Coordinated Replay Sample Selection for Continual Federated Learning (**7 pages, 6 figures, accepted to EMNLP (industry track) 2023**) [[paper](https://doi.org/10.18653/v1/2023.emnlp-industry.32)] [[pdf](https://aclanthology.org/2023.emnlp-industry.32.pdf)] <sub>replay</sub>
+- Continual Adaptation of Vision Transformers for Federated Learning (**Transactions on Machine Learning Research (TMLR) 2024 2023**) [[paper](https://doi.org/10.48550/arXiv.2306.09970)] [[pdf](https://arxiv.org/pdf/2306.09970)] [[code](https://github.com/shaunak27/hepco-fed)] <sub>domain/seg &middot; distill &middot; prompt</sub>
+- Concept Matching: Clustering-based Federated Continual Learning (**arXiv 2023**) [[paper](https://doi.org/10.48550/arXiv.2311.06921)] [[pdf](https://arxiv.org/pdf/2311.06921)] <sub>aggregation &middot; preprint</sub>
+- Better Generative Replay for Continual Federated Learning (**arXiv 2023**) [[paper](https://doi.org/10.48550/arxiv.2302.13001)] [[pdf](https://arxiv.org/pdf/2302.13001)] <sub>generative &middot; data-free &middot; replay</sub>
+- Asynchronous Federated Continual Learning (**CVPRW 2023**) [[paper](https://doi.org/10.1109/cvprw59228.2023.00534)] [[pdf](https://arxiv.org/pdf/2304.03626)] [[code](https://github.com/LTTM/FedSpace)] <sub>FCIL &middot; prototype &middot; aggregation</sub>
+- Age-Aware Data Selection and Aggregator Placement for Timely Federated Continual Learning in Mobile Edge Computing (**IEEE Transactions on Computers 2023**) [[paper](https://doi.org/10.1109/tc.2023.3333213)] <sub>online &middot; prototype &middot; resource</sub>
+- A Peer-to-peer Federated Continual Learning Network for Improving CT Imaging from Multiple Institutions (**arXiv 2023**) [[paper](https://doi.org/10.48550/arxiv.2306.02037)] [[pdf](https://arxiv.org/pdf/2306.02037)] <sub>graph &middot; preprint</sub>
+- A data-free approach to mitigate catastrophic forgetting in federated class incremental learning for vision tasks (**arXiv 2023**) [[paper](https://doi.org/10.52202/075280-2899)] [[pdf](https://arxiv.org/pdf/2311.07784)] <sub>FCIL &middot; generative &middot; data-free</sub>
+
+---
+
+## 2022
+
+- GFCL: A GRU-based Federated Continual Learning Framework against Data Poisoning Attacks in IoV (**arXiv 2022**) [[paper](https://doi.org/10.48550/arxiv.2204.11010)] [[pdf](https://arxiv.org/pdf/2204.11010)] <sub>edge &middot; resource &middot; preprint</sub>
+- Federated Continual Learning to Detect Accounting Anomalies in Financial Auditing (**arXiv 2022**) [[paper](https://doi.org/10.48550/arxiv.2210.15051)] [[pdf](https://arxiv.org/pdf/2210.15051)] <sub>preprint</sub>
+- Federated Continual Learning through distillation in pervasive computing (**Anastasiia Usmanova, FranÃ§ois Portet, Philippe Lalanda and German V... 2022**) [[paper](https://doi.org/10.1109/smartcomp55677.2022.00027)] [[pdf](https://arxiv.org/pdf/2207.08181)] <sub>domain/seg &middot; replay &middot; distill</sub>
+- Federated Continual Learning for Text Classification via Selective Inter-client Transfer (**arXiv 2022**) [[paper](https://doi.org/10.18653/v1/2022.findings-emnlp.353)] [[pdf](https://aclanthology.org/2022.findings-emnlp.353.pdf)] <sub>domain/seg &middot; distill &middot; resource</sub>
+- Federated Continual Learning for Socially Aware Robotics (**IEEE RO-MAN 23' 2022**) [[paper](https://doi.org/10.1109/ro-man57019.2023.10309661)] [[pdf](https://arxiv.org/pdf/2201.05527)] <sub>domain/seg &middot; regularize &middot; projection</sub>
+- Federated Class-Incremental Learning (**arXiv 2022**) [[paper](https://doi.org/10.48550/arxiv.2203.11473)] [[pdf](https://arxiv.org/pdf/2203.11473)] <sub>FCIL &middot; replay &middot; distill</sub>
+- Differentially Private Federated Continual Learning with Heterogeneous Cohort Privacy (**2022 IEEE International Conference on Big Data (Big Data) 2022**) [[paper](https://doi.org/10.1109/bigdata55660.2022.10021082)] <sub>replay &middot; regularize &middot; projection</sub>
+- Cross-FCL: Toward a Cross-Edge Federated Continual Learning Framework in Mobile Edge Computing Systems (**IEEE TMC 2022**) [[paper](https://doi.org/10.1109/tmc.2022.3223944)] <sub>edge &middot; replay &middot; aggregation</sub>
+- Continual Federated Learning Based on Knowledge Distillation (**Proceedings of the Thirty-First International Joint Conference on A... 2022**) [[paper](https://doi.org/10.24963/ijcai.2022/303)] [[pdf](https://www.ijcai.org/proceedings/2022/0303.pdf)] <sub>edge &middot; replay &middot; distill</sub>
+- Communication-efficient federated continual learning for distributed learning system with Non-IID data (**Science China Information Sciences 2022**) [[paper](https://doi.org/10.1007/s11432-020-3419-4)] <sub>resource</sub>
+- Addressing Client Drift in Federated Continual Learning with Adaptive Optimization (**arXiv 2022**) [[paper](https://doi.org/10.48550/arxiv.2203.13321)] [[pdf](https://arxiv.org/pdf/2203.13321)] <sub>edge &middot; aggregation &middot; resource</sub>
+
+---
+
+## 2021
+
+- Towards Federated Learning on Time-Evolving Heterogeneous Data (**arXiv 2021**) [[paper](https://doi.org/10.48550/arXiv.2112.13246)] [[pdf](https://arxiv.org/pdf/2112.13246)] <sub>edge &middot; resource &middot; preprint</sub>
+- Federated Reconnaissance: Efficient, Distributed, Class-Incremental Learning (**arXiv 2021**) [[paper](https://doi.org/10.48550/arxiv.2109.00150)] [[pdf](https://arxiv.org/pdf/2109.00150)] <sub>FCIL &middot; replay &middot; prototype</sub>
+- Federated continuous learning with broad network architecture (**IEEE Transactions on Cybernetics 2021**) <sub>architecture</sub>
+- Federated Continual Learning with Weighted Inter-client Transfer (**ICML 2021**) [[paper](https://doi.org/10.48550/arXiv.2003.03196v5)] [[pdf](https://arxiv.org/pdf/2003.03196v5)] <sub>edge &middot; distill &middot; resource</sub>
+
+---
+
+# Citation File
+
+- `papers.bib`: BibTeX file without local file attachments.
+
+# Contributing
+
+Contributions are welcome. Please see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+# License
+
+This repository is released under the MIT License.
