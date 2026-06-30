@@ -7,7 +7,7 @@ Thanks for helping improve this FCL list.
 Please use this format:
 
 ```markdown
-- Paper Title (**Venue Year**) [[paper](link)] [[pdf](link)] [[code](link)] <sub>compact tags</sub>
+- Paper Title (**Venue Year**) [[paper](link)] [[pdf](link)] [[code](link)] <sub><img alt="tags: FCIL, replay, resource" src="https://img.shields.io/static/v1?label=tags&amp;message=FCIL%20%7C%20replay%20%7C%20resource&amp;color=1f6feb&amp;style=flat-square" height="16"></sub>
 ```
 
 If a PDF or code link is unavailable, omit that tag.
@@ -33,4 +33,4 @@ When possible, update both:
 
 ## Taxonomy
 
-In `README.md`, use only tiny compact tags at the end of an item, for example `<sub>FCIL &middot; replay &middot; resource</sub>`.
+In `README.md`, use one tiny colored Shields badge at the end of an item, for example `<sub><img alt="tags: FCIL, replay, resource" src="https://img.shields.io/static/v1?label=tags&amp;message=FCIL%20%7C%20replay%20%7C%20resource&amp;color=1f6feb&amp;style=flat-square" height="16"></sub>`.
